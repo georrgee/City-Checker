@@ -3,17 +3,19 @@
 //  Created by George Garcia on 2/12/19.
 //  Copyright © 2019 George Garcia. All rights reserved.
 
+//  Description: Struct file to store all the data 
+
 import Foundation
 import SwiftyJSON
 
-struct Spot {
+struct Spot {   
     
     var venue: Venue
     
     init(rawData: JSON) {
         
-        let venueTemp = rawData["venue"]
-        let locationTemp = venueTemp["location"]
+        let venueTemp       = rawData["venue"]
+        let locationTemp    = venueTemp["location"]
         
         let location = Location(
             state:     locationTemp["state"].stringValue,
@@ -41,11 +43,11 @@ struct Venue {
 }
 
 struct Location {
-    var state:      String?
-    var city:       String?
-    var longitude:  Double?
-    var latitude:   Double?
-    var address:    String?
+    var state:        String?
+    var city:         String?
+    var longitude:    Double?
+    var latitude:     Double?
+    var address:      String?
 }
 
 struct Category {

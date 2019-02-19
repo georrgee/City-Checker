@@ -16,16 +16,17 @@ class VenueTableViewCell: UITableViewCell {
     @IBOutlet weak var venueCategoryLabel: UILabel!
     @IBOutlet weak var venueLocationLabel: UILabel!
     
-    // MARK: Variables
+    // MARK: Properties
     var isBookmarked = false
+    
     var data: Spot? {
         didSet {
             
             if let id = data?.venue.id {
                 NetworkingService.shared.getVenuePhoto(venueID: id, success: { [weak self] (url) in
                     self?.venueImageView.download(url: url)
-                }) { (err) in // if no image, then show default image (instead of leaving it blank)
-                    self.venueImageView.image = UIImage(named: "no_image")
+                }) { (err) in
+                    self.venueImageView.image = UIImage(named: "no_image") // if no image, then show default image (instead of leaving it blank)
                 }
             }
             
@@ -37,9 +38,10 @@ class VenueTableViewCell: UITableViewCell {
     }
     
     // MARK: UI Customization
+    
     // Customizing Image UI (hence: making a circular image)
     private func setupVenueImage() {
-        venueImageView?.layer.cornerRadius  = ((venueImageView?.frame.size.height)!) / 2
+        venueImageView?.layer.cornerRadius  = venueImageView.frame.size.width / 2
         venueImageView?.clipsToBounds       = true
         venueImageView?.layer.masksToBounds = true
     }
