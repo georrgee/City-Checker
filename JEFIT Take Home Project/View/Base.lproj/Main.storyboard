@@ -216,9 +216,10 @@
         <scene sceneID="47U-zD-dlW">
             <objects>
                 <navigationController id="t7I-dd-tUJ" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Uau-R9-ATr">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" backIndicatorImage="back-icon" backIndicatorTransitionMaskImage="back-icon" id="Uau-R9-ATr">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="barTintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </navigationBar>
                     <connections>
@@ -230,4 +231,7 @@
             <point key="canvasLocation" x="-585" y="177"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="back-icon" width="18" height="12"/>
+    </resources>
 </document>
